@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
+import AddToList from './components/AddToList';
 import List from './components/List';
 
-function App() {
 
-  interface IState {
+  export interface IState {
     people: {
+      id:number,
       name:string,
       age:number,
       url:string,
@@ -13,10 +14,11 @@ function App() {
     }[]
   }
 
-
+function App() {
 
   const [people, setPeople] = useState <IState["people"]>([
     {
+      id: 2,
       name: "Kobe Bryant",
       age: 54,
       url: "https://cdn.bleacherreport.net/images_root/slideshows/1044/slideshow_104463/default.jpg?x=973538",
@@ -27,7 +29,7 @@ function App() {
   return (
     <div className="App">
       <List people={people}/>
-      <h1>This is where the Application starts</h1>
+      <AddToList people={people} setPeople={setPeople}/>
     </div>
   );
 }
