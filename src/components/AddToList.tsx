@@ -52,7 +52,7 @@ const AddToList: React.FC<IProps> = ({people, setPeople}) => {
         onChange={handleChange}
       />
       <input
-        type="text"
+        type="number"
         placeholder="Age"
         className="AddToList-input"
         value={input.age}
